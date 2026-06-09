@@ -1,11 +1,11 @@
-const MainLayout = ({children} ) => {
+const MainLayout = ({children, title}) => {
 
     return <>
         <header>
-            <h2>Header element</h2>
+            <h2>Header element{title}</h2>
         </header>
 
-        {children}
+        {children || <p>kein children vorhanden</p>}
 
         <footer>
 

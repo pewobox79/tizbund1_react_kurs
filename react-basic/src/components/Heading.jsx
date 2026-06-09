@@ -1,4 +1,3 @@
-
 //Arrow function als Init für Komponente
 const Heading = ({title}) => {
 
