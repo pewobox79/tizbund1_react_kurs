@@ -4,6 +4,7 @@ const ShoppingItem = ({ name, quantity }) => {
 
     console.log("item renders", name)
     const [quant, setQuant] = useState(quantity)
+    const [completed, setCompleted] = useState(false)
 
     console.log("quant outside increment", quant, name)
     function increment() {
@@ -13,7 +14,7 @@ const ShoppingItem = ({ name, quantity }) => {
     }
 
     function decrement() {
-        if(quant == 0) return
+        if (quant == 0) return
         setQuant(prev => prev - 1)
     }
 
@@ -26,10 +27,18 @@ const ShoppingItem = ({ name, quantity }) => {
             alignItems: "center"
         }
     }>
-        <h4 className="shoppintItemName">{name}</h4>
+        <h4
+            className="shoppintItemName"
+            style={{ textDecoration: completed ? "line-through" : "none" }}
+        >
+            {name}
+        </h4>
         <p>Anzahl: {quant}</p>
         <div style={btnStyle} onClick={increment}> + </div>
         <div style={{ padding: 5, border: "1px solid black" }} onClick={decrement}> - </div>
+        <div style={btnStyle} onClick={() => setCompleted(!completed)}>
+            {completed ? "Öffnen" : "Erledigt"}
+        </div>
     </div>
 }
 
