@@ -9,10 +9,11 @@ const DEFAULT_VALUE = {
 const ShoppingForm = ({ list, setList }) => {
 
     const [newShoppingItem, setNewShoppingItem] = useState(DEFAULT_VALUE)
-    console.log(newShoppingItem)
     function handleChange(event) {
+        const { name, value } = event.target
+        const formatedValue = name == "quantity" ? Number(value) : value
         console.log("event in handler", event.target.name, event.target.value)
-        setNewShoppingItem({ ...newShoppingItem, [event.target.name]: event.target.value })
+        setNewShoppingItem({ ...newShoppingItem, [event.target.name]: formatedValue })
     }
 
     function handleSubmit(event) {

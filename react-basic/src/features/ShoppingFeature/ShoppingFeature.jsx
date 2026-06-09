@@ -5,7 +5,7 @@ import ShoppingForm from "./ShoppingForm"
 import ShoppingItem from "./ShoppingItem"
 
 const ShoppingFeature = () => {
-
+    console.log("shopping feature renders")
     const [list, setList] = useState(shoppingList)
 
     const ListElements = list.map((item, index) => {
@@ -14,6 +14,10 @@ const ShoppingFeature = () => {
         //return <ShoppingItem key={item.name + index} {...item} /> => equivalent zu obigem Return mit Spread Operator "key" MUSS identisch sein zw. Sender und Empfänger
     })
 
+    const values = {
+        list,
+        setList
+    }
     return <section id="shoppingFeature">
         <div className="innerShoppingFeature">
             <Heading
@@ -21,8 +25,7 @@ const ShoppingFeature = () => {
             />
 
             <ShoppingForm
-                list={list}
-                setList={setList}
+                {...values}
             />
 
             <div className="shoppingListView">

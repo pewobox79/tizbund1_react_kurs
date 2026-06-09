@@ -1,8 +1,8 @@
 import ShoppingFeature from "../features/ShoppingFeature/ShoppingFeature"
 
 const Homepage = () => {
-
-    return <ShoppingFeature/>
+    console.log("homepage renders")
+    return <ShoppingFeature />
 }
 
 export default Homepage
