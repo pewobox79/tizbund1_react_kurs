@@ -1,5 +1,7 @@
 import './App.css'
 import Button from './components/Button'
+import ABCExercise from './features/ABCExercise/ABCExercise'
+import FetchFeature from './features/FetchFeature/FetchFeature'
 
 function App() {
   return <div>
@@ -9,6 +11,7 @@ function App() {
     >
       <span>Click me</span>
     </Button>
+    <FetchFeature/>
   </div>
 }
 

@@ -1,12 +1,5 @@
-import type { CSSProperties, ReactElement } from "react"
 import '../styles/buttonStyle.css'
-
-
-export type ButtonProps = {
-    label?: string | number //=> ? ist optionaler Type
-    children?: ReactElement | ReactElement[] // => nur elemente erlaubt
-    customCSS?: CSSProperties
-}
+import type { ButtonProps } from '../types/types'
 
 export default function Button({
     label = "Default",
