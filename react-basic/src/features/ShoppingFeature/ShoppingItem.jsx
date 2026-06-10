@@ -18,6 +18,7 @@ const ShoppingItem = ({ name, quantity }) => {
         setQuant(prev => prev - 1)
     }
 
+   
     const btnStyle = { padding: 5, border: "1px solid black" }
 
     return <div className="shoppingItem" style={
@@ -27,6 +28,8 @@ const ShoppingItem = ({ name, quantity }) => {
             alignItems: "center"
         }
     }>
+        
+        {/* <!-- das ist ein kommentar --> */ }
         <h4
             className="shoppintItemName"
             style={{ textDecoration: completed ? "line-through" : "none" }}
