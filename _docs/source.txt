@@ -1,0 +1,16 @@
+#Einige hilfreiche Links und Quellen
+
+#TOOLING
+##VITE Tooling System
+https://vite.dev/
+
+#ReactDev 
+https://react.dev/
+
+#FORM LIBRARIES
+##formik
+https://formik.org/
+
+##React Hook Forms
+https://www.react-hook-form.com/
+
