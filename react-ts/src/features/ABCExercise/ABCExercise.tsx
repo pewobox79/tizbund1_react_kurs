@@ -4,14 +4,24 @@ import { useEffect, useState } from "react"
 const ABCExercise = () => {
 
     const [userId, setUserId] = useState(1)
-    const [selectedUser, setSelectedUser] = useState({id: "", username: ""})
+    const [selectedUser, setSelectedUser] = useState({ id: "", username: "" })
 
     useEffect(() => {
+
+        const controller = new AbortController()
+        const {signal} = controller
+
         const url = `https://jsonplaceholder.typicode.com/users/${userId}`
-        fetch(url)
+        fetch(url, {signal})
             .then(res => res.json())
             .then(data => setSelectedUser(data))
+
+            return ()=>{
+                controller.abort()
+            }
+
     }, [userId])
+    
     return <div>
         <div>
             <p>ID:{selectedUser.id}</p>
