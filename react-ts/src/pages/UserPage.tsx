@@ -5,7 +5,7 @@ import type { UserProps } from "../types/types"
 
 const UserPage = () => {
 
-    const { id } = useParams() // =>zugriff auf url parameter
+    const { id } = useParams<{id:string}>() // => zugriff auf url parameter
 
     const [selectedUser, setSelectedUser] = useState<UserProps>()
     const [isLoading, setIsLoading] = useState(true)

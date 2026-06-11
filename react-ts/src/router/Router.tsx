@@ -2,6 +2,8 @@ import { createBrowserRouter } from "react-router";
 import MainLayout from "../layouts/MainLayout";
 import Homepage from "../pages/Homepage";
 import UserPage from "../pages/UserPage";
+import ProtectedLayout from "../layouts/ProtectedLayout";
+import { protectedLoader } from "../auth/loader";
 
 export const router = createBrowserRouter([
     {
@@ -20,6 +22,20 @@ export const router = createBrowserRouter([
             {
                 path: "users/:id",
                 element: <UserPage/>
+            },
+            {
+                path: "login",
+                element: <UserLogin/>
+            },
+            {
+                element: <ProtectedLayout/>,
+                loader: protectedLoader ,
+                children:[
+                    {
+                        path: "dashboard",
+                        element: <h1>Dashboard</h1>
+                    }
+                ]
             }
         ]
     }
