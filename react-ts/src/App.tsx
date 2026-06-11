@@ -1,6 +1,5 @@
 import './App.css'
 import Button from './components/Button'
-import ABCExercise from './features/ABCExercise/ABCExercise'
 
 function App() {
   return <div>
@@ -8,7 +7,6 @@ function App() {
     <Button>
       <span>Click me</span>
     </Button>
-    <ABCExercise />
   </div>
 }
 

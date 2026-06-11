@@ -1,6 +1,6 @@
 //import '../styles/buttonStyle.css'
 import styles from '../styles/buttonStyle.module.css'
-import type { ButtonProps, ButtonTypes } from '../types/types'
+import type { ButtonProps } from '../types/types'
 
 export default function Button({
     label = "Default",
@@ -10,13 +10,13 @@ export default function Button({
 }: ButtonProps) {
 
     console.log("styles", styles)
-    function getBtnStyle(value: ButtonTypes) {
+    /* function getBtnStyle(value: ButtonTypes) {
         switch (value) {
             case "primary":
                 return styles.btnBg
             default: return styles.btnBg
         }
-    };
+    }; */
 
     return <button
         id="2"
