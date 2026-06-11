@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react"
-
-
 const ABCExercise = () => {
 
     const [userId, setUserId] = useState(1)
