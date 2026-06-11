@@ -17,3 +17,9 @@ export interface UserProps {
     email: string
     address?: Address
 }
+
+export interface UserLoginProps {
+    username: string
+    email: string
+    loggedIn: boolean
+}

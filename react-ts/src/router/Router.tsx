@@ -4,6 +4,7 @@ import Homepage from "../pages/Homepage";
 import UserPage from "../pages/UserPage";
 import ProtectedLayout from "../layouts/ProtectedLayout";
 import { protectedLoader } from "../auth/loader";
+import UserLogin from "../features/UserLogin/UserLogin";
 
 export const router = createBrowserRouter([
     {
