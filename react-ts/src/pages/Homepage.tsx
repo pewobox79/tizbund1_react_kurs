@@ -4,7 +4,7 @@ import ButtonView from "../views/ButtonView"
 
 const Homepage = () => {
 
-    return <MainLayout>
+    return <div>
         <h1>Homepage</h1>
 
         <ButtonView>
@@ -12,7 +12,7 @@ const Homepage = () => {
             <Button />
             <Button />
         </ButtonView>
-    </MainLayout>
+    </div>
 }
 
 export default Homepage

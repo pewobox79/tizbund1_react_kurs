@@ -1,5 +1,6 @@
 import type { ReactNode } from "react"
 import { Outlet } from "react-router"
+import Navigation from "../components/Navigation/Navigation"
 
 const MainLayout = ({ children }: { children?: ReactNode }) => {
     // => children ist im Kontext von REACT zu verwenden!!
@@ -10,6 +11,7 @@ const MainLayout = ({ children }: { children?: ReactNode }) => {
     return <>
         <header>
             <h3>Headerbereich</h3>
+            <Navigation/>
         </header>
 
         <main>
