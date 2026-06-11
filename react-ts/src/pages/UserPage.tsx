@@ -1,17 +1,31 @@
 import { useParams } from "react-router"
+import { useState, useEffect } from "react"
+import UserView from "../views/UserView"
+import type { UserProps } from "../types/types"
 
-const UserPage =()=>{
+const UserPage = () => {
 
-    const params = useParams() // =>zugriff auf url parameter
-    console.log("params in users/:id", params)
+    const { id } = useParams() // =>zugriff auf url parameter
 
-    //AUFGABE: 
-    // userId über den parameter auslesen
-    // useEffect installieren und die abfrage an json.placeholder machen
-    // useSTate nutzen um den ausgewählten return user zu speichern
-    // rendern der userdaten im komponent return
-    // Fallback: bitte info ausgeben, wenn kein user vorhanden ist. 0 oder 11 oder höher!
-    return <h1>user page</h1>
+    const [selectedUser, setSelectedUser] = useState<UserProps>()
+    const [isLoading, setIsLoading] = useState(true)
+
+    useEffect(() => {
+
+        const url = `https://jsonplaceholder.typicode.com/users/${id}`
+        fetch(url).then(res => res.json()).then(userData => {
+            console.log("user data", userData)
+            setSelectedUser(userData)
+            setIsLoading(false)
+        })
+
+    }, [id])
+
+
+    if (isLoading || !selectedUser) return <h1>...loading data</h1>
+
+
+    return <><UserView {...selectedUser} /></>
 }
 
 export default UserPage

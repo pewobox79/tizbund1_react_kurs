@@ -15,5 +15,5 @@ export type Address ={
 export interface UserProps {
     name: string,
     email: string
-    address: Address
+    address?: Address
 }
