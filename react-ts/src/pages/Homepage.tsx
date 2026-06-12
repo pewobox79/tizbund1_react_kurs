@@ -1,10 +1,13 @@
 import Button from "../components/Button"
+import { useLocalStorage } from "../hooks/useLocalStorage"
 import ButtonView from "../views/ButtonView"
 
 const Homepage = () => {
 
+    const itzbUser = useLocalStorage("itzb_user")
     return <div>
-        <h1>Homepage</h1>
+        <h1>Homepage {itzbUser.value.username}</h1>
+        <button onClick={itzbUser.removeLocalStorage}>logout user</button>
         <ButtonView>
             <Button />
             <Button />
