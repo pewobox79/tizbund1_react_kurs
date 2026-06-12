@@ -27,11 +27,16 @@ const UserLogin = () => {
         setFormData(INIT_FORM_VALUES)
     }
 
+    const myFunction = ()=> console.log("hallo")
+
+    console.log("verweis", myFunction)
+    myFunction()
     return <div>
         <h2>User login</h2>
         <form>
             <input type="text" name="username" value={formData?.username} placeholder="Username" onChange={handleChange} />
-            <input type="text" name="email" value={formData?.email} placeholder="Email" onChange={handleChange} />
+            <input type="text" name="email" value={formData?.email} placeholder="Email" 
+            onChange={handleChange} />
             {!formIsFilled(formData) && <button onClick={handleLogin}>Login</button>}
         </form>
     </div>

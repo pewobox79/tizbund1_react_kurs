@@ -3,11 +3,12 @@ import { isAuthenticated } from "./auth";
 
 export async function protectedLoader(){
 
-    if(!isAuthenticated()){
+    const isAuth = isAuthenticated()
+    if(!isAuth){
         throw redirect("/login")
     }
 
-    return null
+    return true
 
 
 }
