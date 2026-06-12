@@ -1,10 +1,13 @@
 import { useParams } from "react-router"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
 import UserView from "../views/UserView"
 import type { UserProps } from "../types/types"
+import { UserContext } from "../context/userContext"
 
 const UserPage = () => {
 
+    const userContextData = useContext(UserContext)
+    console.log("userContextdata", userContextData)
     const { id } = useParams<{id:string}>() // => zugriff auf url parameter
 
     const [selectedUser, setSelectedUser] = useState<UserProps>()
