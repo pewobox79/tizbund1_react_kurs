@@ -4,6 +4,17 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  esbuild: {
+    include: /.*\.jsx?$/, // Treat .js and .jsx files as JSX
+    exclude: [],
+  },
+  optimizeDeps: {
+    esbuildOptions: {
+      loader: {
+        '.js': 'jsx', // Ensure dependencies with JSX in .js are handled
+      },
+    },
+  },
 })
 
 

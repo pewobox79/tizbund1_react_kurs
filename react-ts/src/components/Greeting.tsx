@@ -1,0 +1,6 @@
+const Greeting =({name}:{name:string})=>{
+
+    return <h1>Hallo {name}</h1>
+}
+
+export default Greeting
